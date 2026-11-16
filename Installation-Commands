@@ -1,0 +1,18 @@
+1  free -h
+    2  clear
+    3  sudo apt update && sudo apt upgrade -y
+    4  sudo apt install -y wget curl tar unzip vim net-tools ufw
+    5  sudo apt install -y openjdk-21-jdk
+    6  java -version
+    7  readlink -f $(which java)
+    8  sudo apt install -y maven
+    9  cd /tmp
+   10  wget https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
+   11  wget https://dlcdn.apache.org/maven/maven-3/3.10.1/binaries/apache-maven-3.10.1-bin.tar.gz
+   12  ls -lh apache-maven-3.10.1-bin.tar.gz
+   13  sudo mkdir -p /opt/maven
+   14  sudo tar -xzf apache-maven-3.10.1-bin.tar.gz -C /opt/maven
+   15  sudo ln -sfn /opt/maven/apache-maven-3.10.1 /opt/maven/current
+   16  ls /opt/maven
+   17  ls /opt/maven/current
+   18  /opt/maven/current/bin/mvn -version
