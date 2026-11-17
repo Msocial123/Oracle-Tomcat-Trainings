@@ -40,3 +40,5 @@
   197  podman ps
   198  podman exec -it example-cont /bin/bash
   199  podman ps
+  podman run -it --memory="2g" --memory-swap="2g" --name murali-cont ubuntu /bin/bash podman stats
+  208  podman stats
