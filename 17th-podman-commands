@@ -1,0 +1,42 @@
+
+  159  podman -version
+  160  podman version
+  161  podman images
+  162  podman ps
+  163  podman ps -a
+  164  podman create ubuntu
+  165  podman images
+  166  podman ps
+  167  podman ps -a
+  168  podman start 782be568d3fa
+  169  podman ps
+  170  podman ps -a
+  171  podman create -it --name sample-cont ubuntu
+  172  podman ps -a
+  173  podman start sample-cont
+  174  podman ps
+  175  podman attach sample-cont
+  176  podman ps
+  177  podman stop sample-cont
+  178  podman ps
+  179  podman ps -a
+  180  podman start sample-cont
+  181  podman stats
+  182  docker ps
+  183  podman ps
+  184  podman images
+  185  podman ps -as
+  186  podman rm sample-cont
+  187  podman rm - fsample-cont
+  188  podman rm - f sample-cont
+  189  podman rm -f sample-cont
+  190  clear
+  191  podman run -it --name sample-cont ubuntu /bin/sh
+  192  docker ps
+  193  podman ps
+  194  podman ps -a
+  195  podman start sample-cont
+  196  podman run -td --name example-cont ubuntu /bin/sh
+  197  podman ps
+  198  podman exec -it example-cont /bin/bash
+  199  podman ps
