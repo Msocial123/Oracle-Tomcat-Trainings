@@ -1,0 +1,8 @@
+vi /etc/containers/registries.conf - docker.io
+podman pull muralisocial123/fitness-app:v1.0.1
+podman run -td --name fitness-app -p 5001:5000 docker.io/muralisocial123/fitness-app:v1.0.1
+podman ps
+podman port 47d07cb1a3cf
+podman exec -it fitness-app /bin/sh - To go inside the container 
+exit - Type exit to come out of the container
+
