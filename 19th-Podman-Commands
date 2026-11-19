@@ -73,3 +73,65 @@ Volumes :
    92  podman volume ls
    93  ls
    94  podman exec -it v2 /bin/sh
+
+Networking Commands : 
+
+
+ podman network ls
+  104  podman ps
+  105  podman inspect 91c3d2bbb706
+  106  podman network create --subnet 10.0.0.0/24 --gateway 10.0.0.1 custom-net-1
+  107  podman network ls
+  108  podman netowrk inspect custom-net-1
+  109  podman network inspect custom-net-1
+  110  podman network bridge custom-net-1
+  111  podman network inspect bridge custom-net-1
+  112  podman network inspect bridge
+  113  podman network ls
+  114  podman network inspect podman
+  115  podman run -td --name app1 --network custom-net-1 alpine sleep infinity
+  116  podman ps
+  117  podman inspect a541549ead02
+  118  podman run -td --name app2 --network custom-net-1 --ip 10.0.0.10 alpine sleep infinity
+  119  podman inspect a541549ead02
+  120  podman inspect app2
+  121  podman network create --subnet 10.0.0.0/24 --gateway 10.0.0.1 frontend-net
+  122  podman network create --subnet 10.1.0.0/24 --gateway 10.0.0.1 frontend-net
+  123  podman network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 frontend-net
+  124  podman network ls
+  125  podman network rm dfe896e49f8b
+  126  podman network create --subnet 10.0.0.0/24 --gateway 10.0.0.1 backend-net
+  127  podman networks ls
+  128  podman network ls
+  129  podman ps
+  130  podman rm -f a541549ead02
+  131  podman rm -f f07291324664
+  132  podman ps
+  133  podman network create --subnet 10.0.0.0/24 --gateway 10.0.0.1 backend-net
+  134  podman network create --subnet 10.0.1.0/24 --gateway 10.0.0.1 backend-net
+  135  podman network create --subnet 10.0.1.0/24 --gateway 10.0.1.1 backend-net
+  136  podman network ls
+  137  podman run -d --name web-gateway --network frontend-net alpine sleep infinity
+  138  podman run -d --name db-service --network backend-net alpine sleep infinity
+  139  podman network ls
+  140  podman ps
+  141  podman inspect bfb76a556807
+  142  podman inspect db-gatway
+  143  podman ps
+  144  podman inspect db-service
+  145  podman ps ls
+  146  podman ps
+  147  podman exec -it bfb76a556807 /bin/sh
+  148  podman ps
+  149  podman exec -it db-service /bin/sh
+  150  podman ps
+  151  podman inspect 8b2ec910d56f
+  152  podman exec -it db-service /bin/sh
+  153  podman inspect 8b2ec910d56f
+  154  podman ps
+  155  podman exec 91c3d2bbb706 ip addr | grep -A 3 "eth0"
+  156  ip addr | grep -A 3 "eth0"
+  157  ip link | grep -E "veth|podman"
+  158  podman inspect 8b2ec910d56f
+  159  podman network ls
+  160  podman network inspect 076077e4c09b
