@@ -17,3 +17,59 @@
    28  trivy image --format table localhost/bank-digi:v1.1.0
    29  systemctl enable --now podman.socket
    30  ls -l /run/podman/podman.sock
+Volumes : 
+
+41  podman run -td --name v1 -v /data ubuntu /bin/bash
+   42  podman ps
+   43  podman exec -it v1 /bin/sh
+   44  podman ps
+   45  podman -f v1
+   46  podman rm -f v1
+   47  podman volume ls
+   48  cd /var/lib/containers
+   49  ls
+   50  cd storage
+   51  ls
+   52  cd volumes
+   53  ls
+   54  cd eeced8b15c1ee57fbd2819936754a63ee691f41086cc15f68656755799981512
+   55  cd data
+   56  ls
+   57  cd _data
+   58  ls
+   59  cd /home/ubuntu
+   60  ls
+   61  podman run -td --name v1 -v my_data:/data ubuntu /bin/bash
+   62  podman volumes ls
+   63  podman volume ls
+   64  cd /var/lib/container/volumes
+   65  cd /var/lib/containers
+   66  ls
+   67  cd storage/volumes
+   68  ls
+   69  cd /home/ubuntu
+   70  podman exec -it v1 /bin/bash
+   71  cd /var/lib/containers
+   72  cd storage/volumes
+   73  ls
+   74  cd my_data
+   75  ls
+   76  cd _data
+   77  ls
+   78  rm -rf app.py
+   79  ls
+   80  cd /home/ubutu
+   81  cd /home/ubuntu
+   82  ls
+   83  cd /var/lib/containers
+   84  ls
+   85  cd /home/ubuntu
+   86  podman exec -it v1 /bin/bash
+   87  mkdir oracle
+   88  cd oracle
+   89  pwd
+   90  cd ..
+   91  podman run -td --name v2 -v /home/ubuntu/oracle:/data ubuntu /bin/bash
+   92  podman volume ls
+   93  ls
+   94  podman exec -it v2 /bin/sh
