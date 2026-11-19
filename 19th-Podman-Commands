@@ -1,0 +1,19 @@
+ 12  sudo apt update
+   13  sudo apt install -y snapd
+   14  snap install trivy -y
+   15  snap install trivy
+   16  sudo apt-get install wget gnupg
+   17  wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+   18  echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+   19  sudo apt-get update
+   20  sudo apt-get install trivy
+   21  trivy --version
+   22  podman images
+   23  trivy image localhost/bank-digi:v1.1.0
+   24  trivy image --format table localhost/bank-digi:v1.1.0
+   25  systemctl status podman
+   26  systemctl start  podman
+   27  systemctl status podman
+   28  trivy image --format table localhost/bank-digi:v1.1.0
+   29  systemctl enable --now podman.socket
+   30  ls -l /run/podman/podman.sock
